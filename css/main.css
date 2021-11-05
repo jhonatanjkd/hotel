@@ -1,0 +1,665 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+   @font-face {
+    font-family: 'Lato';
+    src: url('fonts/Lato-Regular.eot');
+    src: url('fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Lato-Regular.woff2') format('woff2'),
+        url('fonts/Lato-Regular.woff') format('woff'),
+        url('fonts/Lato-Regular.ttf') format('truetype'),
+        url('fonts/Lato-Regular.svg#Lato-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Light.eot');
+  src: url('fonts/Montserrat-Light.eot?#iefix') format('embedded-opentype'),
+      url('fonts/Montserrat-Light.woff2') format('woff2'),
+      url('fonts/Montserrat-Light.woff') format('woff'),
+      url('fonts/Montserrat-Light.ttf') format('truetype'),
+      url('fonts/Montserrat-Light.svg#Montserrat-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+body{
+  font-family: 'Lato';
+}
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .sr-only class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+header .headerTop{
+  background-color: #2d2d2d;
+  color:#fff;
+  padding: 16px 0px;
+  background-image: url(../img/home/exterior.jpg);
+  background-position: center top;
+  background-size: cover;
+  font-size: 14px;
+}
+.logo{
+  height: 10vh;
+  display: flex;
+  align-items: center;
+}
+.logo a{
+  display:block;
+}
+.logo a img{
+  width: 210px;
+}
+
+.menu nav {
+  height: 65px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+}
+
+.menu .nav-links {
+  display: flex;
+  list-style: none;
+ /*  width: 50%; */
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: auto;
+  padding:0;
+  margin-bottom:0;
+}
+
+.menu .nav-links li a {
+  color: #727475;
+  text-decoration: none;
+  font-size: 16px;
+  height:100%;
+  display: flex;
+  align-items: center;
+  height: 10vh;
+}
+
+
+@media screen and (max-width: 768px) {
+  .menu .line {
+    width: 30px;
+    height: 3px;
+    background: black;
+    margin: 5px;
+  }
+  .menu nav {
+    position: relative;
+  }
+
+  .menu .hamburger {
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 2;
+  }
+
+  .menu .nav-links {
+    position: fixed;
+    background: #fff;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    clip-path: circle(100px at 90% -10%);
+    -webkit-clip-path: circle(100px at 90% -10%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+    left: 0;
+    z-index:1;
+  }
+  .menu .nav-links.open {
+    clip-path: circle(1000px at 90% -10%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+    pointer-events: all;
+    z-index:1;
+  }
+  .menu .nav-links li {
+    opacity: 0;
+  }
+  .menu .nav-links li a {
+    font-size: 25px;
+  }
+  .menu .nav-links li:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
+  }
+  .menu .nav-links li:nth-child(2) {
+    transition: all 0.5s ease 0.4s;
+  }
+  .menu .nav-links li:nth-child(3) {
+    transition: all 0.5s ease 0.6s;
+  }
+  .menu li.fade {
+    opacity: 1;
+  }
+  .menu .fade:not(.show) {
+     opacity: 1;
+}
+}
+
+.bannerHome{
+  max-height: 786px;
+  height: 786px;
+  background-repeat: no-repeat;
+    background-image: url(../img/home/exterior.jpg);
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    opacity: 1;
+    visibility: inherit;
+/*     -webkit-filter: brightness(80%);
+    filter: brightness(80%); */
+}
+.textoBanner{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+}
+.centroTexto{
+  width:100%;
+  line-height:50px;
+  color:#fff;
+}
+.centroTexto h1{
+  font-family: 'Montserrat';
+  font-size:70px;
+  width: 50%;
+  margin: 0 auto;
+}
+.roomsHome{
+  margin:30px 0;
+}
+.roomsHome h2{
+  text-align:center;
+  color:#7e7e7e;
+}
+.roomsHome span{
+  text-align:center;
+  color:#7e7e7e;
+  display: block;
+  font-size: 13px;
+  margin-bottom: 30px;
+}
+.roomsHome .itemRoomsHome{
+  margin-bottom:30px;
+}
+.roomsHome .itemRoomsHome a{
+  width: 100%;
+  display: block;
+  height: 100%;
+  position: relative;
+}
+.roomsHome .itemRoomsHome a .typeRoomsHome{
+  position:absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  padding: 0px 30px;
+  align-items: baseline;
+}
+.roomsHome .itemRoomsHome a .typeRoomsHome span{
+  margin-bottom: 20px;
+  margin-right: 20px;
+  color:#fff;
+  text-transform: uppercase;
+}
+.roomsHome .itemRoomsHome a .typeRoomsHome span:last-child{
+  background-color: #6ab1bf;
+  padding: 5px;
+  border-radius: 4px;
+}
+.roomsHome .itemRoomsHome img{
+  width:100%;
+}
+.infoGeneral H3{
+  padding: 20px;
+  text-align: center;
+  font-size: 40px;
+  line-height: 55px;
+  font-weight: lighter; 
+ color: #525252;
+ margin-top: 40px;
+}
+.infoGeneral .fotoInfo{
+  position: relative;
+  margin-bottom: 20px;
+}
+.infoGeneral .fotoInfo img{
+  width: 100%;
+}
+.infoGeneral .fotoInfo .textoItemG{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0px 30px;
+  text-align: center
+}
+.infoGeneral .fotoInfo .textoItemG span{
+  display: block;
+  color: #fff;
+  margin-bottom:10px;
+  font-size:28px;
+}
+.infoGeneral .fotoInfo .textoItemG span:last-child{
+  font-size: 18px;
+}
+.MoreItems{
+  margin: 50px 0;
+}
+.MoreItems .itemsIconos{
+  display:flex;
+  margin-bottom: 30px;
+}
+.MoreItems .itemsIconos img{
+  margin-right: 20px;
+}
+.MoreItems .itemsIconos .notaItem p{
+  color: #7e7e7e;
+  font-size:14px;
+}
+.MoreItems .itemsIconos .notaItem a{
+  color: #66baea;
+  font-weight: 700;
+  font-size: 13px;
+  cursor:pointer;
+  text-decoration:none !important;
+}
+.descubreUbicacion{
+  display: flex;
+}
+.descubreUbicacion .division {
+  width: 50%;
+  display: flex;
+}
+.descubreUbicacion .division img{
+  width: 100%;
+}
+.descubreUbicacion .division .divisionTexto {
+  background-color: #45606b !important;
+  padding: 23px;
+  color: #fff;
+  display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.descubreUbicacion .division .divisionTexto h4{
+  font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 2px;
+    font-weight: lighter;
+}
+.descubreUbicacion .division .divisionTexto h3{
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+.descubreUbicacion .division .divisionTexto h3 span{
+  color: #66baea;
+}
+.descubreUbicacion .division .divisionTexto .divTextos{
+  display:flex;
+
+}
+.descubreUbicacion .division .divisionTexto .divTextos p{
+  margin-right: 30px;
+}
+.descubreUbicacion .division .divisionTexto .btnRoomsText{
+  border-bottom: 1px solid #ffff;
+  border-top: 1px solid #ffff;
+  max-width: 200px;
+  text-align: center;
+  padding: 8px;
+  cursor:pointer;
+  margin-top: 30px;
+}
+.footer{
+  margin-top:50px;
+}
+.footer ul{
+  margin: 0;
+  padding: 0;
+}
+.footer ul li{
+  list-style: none;
+  color: #7e7e7e;
+  margin-bottom: 5px;
+}
+.footer ul li span{
+  font-size:24px;
+}
+.footer .social{
+  display:flex;
+}
+.footer .SocialRedes span{
+  font-size:24px;
+  color: #7e7e7e;
+}
+.footer .social li{
+  padding: 10px;
+  font-size: 24px;
+}
+.footer .cintafooter{
+  margin-top: 50px;
+  padding: 20px 0;
+  color: #fff;
+  text-align: center;
+  background-image: url(../img/home/para07.jpg) !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+
+/*media querys*/
+
+@media (max-width: 1199.98px) { 
+  .logo a img {
+    max-width: 150px;
+  }
+  .descubreUbicacion{
+    flex-flow: column;
+  }
+  .descubreUbicacion .division{
+    width:100%;
+  }
+}
+@media (max-width: 991.98px) {
+  .logo a img {
+    max-width: 150px;
+}
+.MoreItems .itemsIconos{
+  flex-flow: wrap;
+}
+}
+@media (max-width: 767.98px) {
+  .centroTexto h1{
+    font-size: 55px;
+    width: 100%;
+  }
+  .SocialRedes, .footer ul{
+    text-align: center;
+  }
+  .footer .social{
+    justify-content: center;
+  }
+}
+
+@media (max-width: 575.98px) { 
+  .centroTexto h1{
+    font-size: 48px;
+    width: 100%;
+  }
+  
+}
+
+
+
+
+
+
